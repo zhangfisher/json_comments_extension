@@ -17,7 +17,11 @@
     "commands": [
       {
         "command": "json-comments.addComments",
-        "title": "Add Comments to JSON"
+        "title": "Add Comments"
+      },
+      {
+        "command": "json-comments.removeComments",
+        "title": "Remove Comments"
       }
     ],
     "configuration": [
