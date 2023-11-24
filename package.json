@@ -25,68 +25,68 @@
       }
     ],
     "configuration": [
-        {
-          "id": "JsonComments",
-          "title": "JsonComments",
-          "order": 2,
-          "properties": {
-            "conf.settingsEditor.numericObjectSetting": {
-              "type": "object",
-              "order": 2,
-              "description": "An example numeric object setting.",
-              "properties": {
-                "intprop": {
-                  "type": "integer",
-                  "description": "Integer property"
-                },
-                "numprop": {
-                  "type": "number",
-                  "description": "Numeric property"
-                }
+      {
+        "id": "JsonComments",
+        "title": "JsonComments",
+        "order": 2,
+        "properties": {
+          "conf.settingsEditor.numericObjectSetting": {
+            "type": "object",
+            "order": 2,
+            "description": "An example numeric object setting.",
+            "properties": {
+              "intprop": {
+                "type": "integer",
+                "description": "Integer property"
               },
-              "additionalProperties": false
-            },
-            "conf.settingsEditor.boolObjectSetting": {
-              "type": "object",
-              "order": 1,
-              "description": "An example bool object setting.",
-              "properties": {
-                "prop1": {
-                  "type": "boolean",
-                  "description": "Property 1"
-                },
-                "prop2": {
-                  "type": "boolean",
-                  "description": "Property 2"
-                }
-              },
-              "additionalProperties": false,
-              "default": {
-                "prop1": true,
-                "prop2": false
+              "numprop": {
+                "type": "number",
+                "description": "Numeric property"
               }
             },
-            "conf.settingsEditor.uniqueEnumArraySetting": {
-              "type": "array",
-              "description": "An example enum array setting.",
-              "items": {
-                "type": "string",
-                "enum": [
-                  "red",
-                  "yellow",
-                  "blue"
-                ]
+            "additionalProperties": false
+          },
+          "conf.settingsEditor.boolObjectSetting": {
+            "type": "object",
+            "order": 1,
+            "description": "An example bool object setting.",
+            "properties": {
+              "prop1": {
+                "type": "boolean",
+                "description": "Property 1"
               },
-              "uniqueItems": true
+              "prop2": {
+                "type": "boolean",
+                "description": "Property 2"
+              }
             },
-            "conf.settingsEditor.multilineSetting": {
-              "type": "string",
-              "description": "An example multiline setting.",
-              "editPresentation": "multilineText"
+            "additionalProperties": false,
+            "default": {
+              "prop1": true,
+              "prop2": false
             }
+          },
+          "conf.settingsEditor.uniqueEnumArraySetting": {
+            "type": "array",
+            "description": "An example enum array setting.",
+            "items": {
+              "type": "string",
+              "enum": [
+                "red",
+                "yellow",
+                "blue"
+              ]
+            },
+            "uniqueItems": true
+          },
+          "conf.settingsEditor.multilineSetting": {
+            "type": "string",
+            "description": "An example multiline setting.",
+            "editPresentation": "multilineText"
           }
         }
-      ]
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "pnpm run package",
@@ -100,18 +100,27 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.84.0",
     "@types/mocha": "^10.0.3",
     "@types/node": "18.x",
+    "@types/vscode": "^1.84.0",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
+    "@vscode/test-electron": "^2.3.6",
     "eslint": "^8.52.0",
     "glob": "^10.3.10",
     "mocha": "^10.2.0",
-    "typescript": "^5.2.2",
     "ts-loader": "^9.5.0",
+    "tsx": "^4.4.0",
+    "typescript": "^5.2.2",
     "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4",
-    "@vscode/test-electron": "^2.3.6"
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@types/json-to-ast": "^2.1.4",
+    "@types/jsonpath": "^0.2.4",
+    "fluent-json-schema": "^4.2.1",
+    "json-schema-from-path": "^2.0.1",
+    "json-to-ast": "^2.1.0",
+    "jsonpath": "^1.1.1"
   }
 }

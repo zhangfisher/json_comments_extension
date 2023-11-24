@@ -7,31 +7,25 @@
  */
 
 
-import { CancellationToken, commands, ExtensionContext, Hover, languages, MarkdownString, Position, Range, TextDocument, window } from "vscode";
+import {  ExtensionContext, Hover, languages, MarkdownString, Position, Range, TextDocument, window } from "vscode";
 
 
-let working: Set<String> = new Set();
-
-function getHoverId(document: TextDocument, position: Position) {
-    return  `${document.uri.toString()}-${position.line}-${position.character}`;
-}
 
 export function jsonKeyHover(context: ExtensionContext) {
     let hoverProviderDisposable = languages.registerHoverProvider('json', {
         async provideHover(document, position, token) {             
-             // 获取当前鼠标位置的 JSON 令牌
-			const jsonRange = document.getWordRangeAtPosition(position, /(?<=")([^"]*)(?="\s*:)/);
-			if (!jsonRange) {
+             // 获取当前鼠标位置的JSON Key
+			const jsonKeyRange = document.getWordRangeAtPosition(position, /(?<=")([^"]*)(?="\s*:)/);
+			if (!jsonKeyRange) {
 				return;
 			}
-
 			// 获取 JSON 键的文本
-			const jsonKey = document.getText(jsonRange);
+			const jsonKey = document.getText(jsonKeyRange);
 
 			// 根据 JSON 键返回相应的 Hover 内容
-			const addComments = new MarkdownString(`[添加注释1](command:json-comments.addComments?${encodeURIComponent(JSON.stringify({key:jsonKey,rang:jsonRange}))}): ${jsonKey}`,true)
+			const addComments = new MarkdownString(`[添加注释](command:json-comments.addComments?${encodeURIComponent(JSON.stringify({key:jsonKey,rang:jsonKeyRange}))}): ${jsonKey}`,true)
 			addComments.isTrusted = true;
-			 return new Hover(addComments);
+			return new Hover(addComments);
  
         }
     });
