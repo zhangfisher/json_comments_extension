@@ -4,16 +4,7 @@
  *
  */
 
-import astParser, { Location } from "json-to-ast";
-// import { Position } from "vscode";
-import {
-	ASTNode,
-	ObjectNode,
-	ArrayNode,
-	PropertyNode,
-	IdentifierNode,
-	LiteralNode,
-} from "json-to-ast";
+import astParser, { Location,ASTNode,ObjectNode,ArrayNode,PropertyNode } from "json-to-ast";
 
 
 type Position = {
@@ -22,9 +13,9 @@ type Position = {
 }
 
 function inPosition(this: ParseJsonPathContext,loc:Location){
-	if(loc){
-		return loc.start.line === this.pos.line
-	}	
+	if(!loc) return false
+	return loc.start.line === this.pos.line //&& loc.start.column >= this.pos.column && loc.end.column <= this.pos.column
+	
 }
 
 const ABORT = Symbol("abort")
@@ -75,7 +66,9 @@ function traversePropertyNode(this: ParseJsonPathContext, node: PropertyNode,con
 	const value = node.value;
 	
 	if(inPosition.call(this,node.key.loc!)){
-		console.log(`Path = ${context.path.join(".")}.${key}`);
+		//console.log(`Path = ${context.path.join(".")}.${key}`);
+		context.path.push(key)
+		this.result = context.path.join(".")
 		return ABORT
 	}
 	//console.log(`Path = ${context.path.join(".")}.${key}`);
@@ -90,18 +83,22 @@ function traversePropertyNode(this: ParseJsonPathContext, node: PropertyNode,con
 
 interface ParseJsonPathContext { 
 	pos: Position;
+	result?:string
 }
 
 /**
- * 解析指定位置的JsonPath
+ * 
+ * 返回指定位置的JsonPath
+ * 
  * @returns
  */
 export function getPathFromJson(json:string,pos: Position)  {
 	const ast = astParser(json, { loc: true });
 	const context: ParseJsonPathContext = { 
-		pos,
+		pos
 	};
 	traverseAST.call(context, ast,{path:[]});
+	return context.result
 }
 
  

@@ -11,10 +11,6 @@
 	// Turn off tsc task auto detection since we have the necessary tasks as npm scripts
 	"typescript.tsc.autoDetect": "off",
 	"json.schemas": [
-		{
-			"fileMatch": ["/src/utils/sample.json"],
-			"schema": {"type":"object","properties":{"a":{"type":"object","properties":{"b":{"type":"object","properties":{"c":{"description":"c注释"}},"description":"b注释"},"l":{"type":"array","items":{"anyOf":[{"type":"object","properties":{"m":{"description":"数组[0]=m"},"n":{"description":"数组[1]=n"}}}]},"description":"数组0"}},"description":"a注释"},"x":{"description":"x注释","type":"object","properties":{"y":{"description":"y注释"}}}}}
-			}
-		}
+		
 	]
 }

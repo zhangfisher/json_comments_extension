@@ -21,9 +21,13 @@ export function jsonKeyHover(context: ExtensionContext) {
 			}
 			// 获取 JSON 键的文本
 			const jsonKey = document.getText(jsonKeyRange);
+			
+			const cmds = [
+				`[$(keybindings-add)添加注释](command:json-comments.addComments?${encodeURIComponent(JSON.stringify({key:jsonKey,rang:jsonKeyRange}))})`
+			]
 
 			// 根据 JSON 键返回相应的 Hover 内容
-			const addComments = new MarkdownString(`[添加注释](command:json-comments.addComments?${encodeURIComponent(JSON.stringify({key:jsonKey,rang:jsonKeyRange}))}): ${jsonKey}`,true)
+			const addComments = new MarkdownString(cmds.join(" "),true)
 			addComments.isTrusted = true;
 			return new Hover(addComments);
  
