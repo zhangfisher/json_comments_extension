@@ -118,6 +118,7 @@
   "dependencies": {
     "@types/json-to-ast": "^2.1.4",
     "@types/jsonpath": "^0.2.4",
+    "flex-tools": "^1.3.50",
     "fluent-json-schema": "^4.2.1",
     "json-schema-from-path": "^2.0.1",
     "json-to-ast": "^2.1.0",

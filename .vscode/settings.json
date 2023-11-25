@@ -1,16 +1,20 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-    "files.exclude": {
-        "out": false, // set this to true to hide the "out" folder with the compiled JS files
-        "dist": false // set this to true to hide the "dist" folder with the compiled JS files
-    },
-    "search.exclude": {
-        "out": true, // set this to false to include "out" folder in search results
-        "dist": true // set this to false to include "dist" folder in search results
-    },
-    // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
-    "typescript.tsc.autoDetect": "off",
-    "json.schemas": [
-    
-    ]
+	"files.exclude": {
+		"out": false, // set this to true to hide the "out" folder with the compiled JS files
+		"dist": false // set this to true to hide the "dist" folder with the compiled JS files
+	},
+	"search.exclude": {
+		"out": true, // set this to false to include "out" folder in search results
+		"dist": true // set this to false to include "dist" folder in search results
+	},
+	// Turn off tsc task auto detection since we have the necessary tasks as npm scripts
+	"typescript.tsc.autoDetect": "off",
+	"json.schemas": [
+		{
+			"fileMatch": ["/src/utils/sample.json"],
+			"schema": {"type":"object","properties":{"a":{"type":"object","properties":{"b":{"type":"object","properties":{"c":{"description":"c注释"}},"description":"b注释"},"l":{"type":"array","items":{"anyOf":[{"type":"object","properties":{"m":{"description":"数组[0]=m"},"n":{"description":"数组[1]=n"}}}]},"description":"数组0"}},"description":"a注释"},"x":{"description":"x注释","type":"object","properties":{"y":{"description":"y注释"}}}}}
+			}
+		}
+	]
 }

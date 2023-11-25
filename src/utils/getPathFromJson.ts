@@ -104,31 +104,15 @@ export function getPathFromJson(json:string,pos: Position)  {
 	traverseAST.call(context, ast,{path:[]});
 }
 
-
-/**
- * 提供当前交标集
- * @param json 
- * @param pos 
- */
-export function getJsonPathAtPosition(json:string,pos: Position)  {
-	// const doc = getCurrentDocument();
-	// if (!doc) return;
-
-	const ast = astParser(json, { loc: true });
-
-	const context: ParseJsonPathContext = { 
-		pos,
-	};
-	traverseAST.call(context, ast,{path:[]});
-}
+ 
 
 
-import fs from "fs"
-import path from "path"
+// import fs from "fs"
+// import path from "path"
 
-const json = fs.readFileSync(path.join(__dirname,"../../package.json")).toString()
+// const json = fs.readFileSync(path.join(__dirname,"../../package.json")).toString()
 
-getPathFromJson(json,{line:2,column:22})
-getPathFromJson(json,{line:23,column:5})
-getPathFromJson(json,{line:30,column:5})
-getPathFromJson(json,{line:33,column:5})
+// getPathFromJson(json,{line:2,column:22})
+// getPathFromJson(json,{line:23,column:5})
+// getPathFromJson(json,{line:30,column:5})
+// getPathFromJson(json,{line:33,column:5})
