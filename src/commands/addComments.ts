@@ -28,7 +28,9 @@ export function addComments(context: ExtensionContext) {
 		const currentDocument = getCurrentDocument()
 		if(!currentDocument){
 			return
-		}
+		} 
+
+
 		// 1. 获取所点击的JSON Key的路径
 		const jsonpath = getPathFromJson(currentDocument.getText(),{
 			line:rang[0].line+1,
@@ -39,10 +41,13 @@ export function addComments(context: ExtensionContext) {
 		if(!comments) return
 
 		const docRelPath = getDocumentRelativePath(currentDocument)
-
+		// 2. 更新当前文档的json schema
 		updateDocumentComments(docRelPath!,jsonpath!,{
 			markdownDescription: comments
 		})
+
+		// 4. 更新到当前文档的指定 jsonpath 的注 
+
 
  		//window.showInformationMessage(`添加注释成功：${jsonpath}：${comments}`);
 	}

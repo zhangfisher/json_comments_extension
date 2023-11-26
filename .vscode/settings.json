@@ -17,5 +17,11 @@
 			],
 			"uri":"./package.schema.json"
 		}
-	]
+	],
+	"json-comments":{
+		"package.json": {
+			"main":"ddsdsdsd",
+			"scripts.test":"mytest"
+		}
+	}
 }
