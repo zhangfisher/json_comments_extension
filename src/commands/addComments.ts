@@ -4,6 +4,7 @@ import * as vscode from 'vscode';
 import { getCurrentDocument } from '../utils/getCurrentDocument';
 import { getPathFromJson } from '../utils/getPathFromJson';
 import { getDocumentRelativePath } from '../utils/getDocumentRelativePath';
+import { updateDocumentComments } from '../utils/updateDocumentComments';
 
 
 export interface AddCommentsParams{
@@ -22,20 +23,28 @@ export interface AddCommentsParams{
  * 
  */
 export function addComments(context: ExtensionContext) {
-    return function({key,rang}:AddCommentsParams){ 
+    return async function({key,rang}:AddCommentsParams){ 
 		const editor = window.activeTextEditor;
 		const currentDocument = getCurrentDocument()
 		if(!currentDocument){
 			return
 		}
 		// 1. 获取所点击的JSON Key的路径
-		const path = getPathFromJson(currentDocument.getText(),{
+		const jsonpath = getPathFromJson(currentDocument.getText(),{
 			line:rang[0].line+1,
 			column:rang[0].character+1
 		})
+		
+		const comments = await vscode.window.showInputBox({ placeHolder: `为<${jsonpath}>输入注释内容：` });
+		if(!comments) return
+
 		const docRelPath = getDocumentRelativePath(currentDocument)
 
- 		window.showInformationMessage('添加注释键：'+key,"路径:"+path);
+		updateDocumentComments(docRelPath!,jsonpath!,{
+			markdownDescription: comments
+		})
+
+ 		//window.showInformationMessage(`添加注释成功：${jsonpath}：${comments}`);
 	}
 }
 

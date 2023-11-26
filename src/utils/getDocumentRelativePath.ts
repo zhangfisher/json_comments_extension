@@ -13,4 +13,6 @@ export function getDocumentRelativePath(document: vscode.TextDocument) {
     const relativePath = vscode.workspace.asRelativePath(document.uri);
     return relativePath
   }
+
+
 }

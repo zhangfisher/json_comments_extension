@@ -10,7 +10,12 @@
 	},
 	// Turn off tsc task auto detection since we have the necessary tasks as npm scripts
 	"typescript.tsc.autoDetect": "off",
-	"json.schemas": [
-		
+	"json.schemas": [		 
+		{
+			"fileMatch": [
+				"package.json"
+			],
+			"uri":"./package.schema.json"
+		}
 	]
 }
