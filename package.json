@@ -27,20 +27,27 @@
     "configuration": [
       {
         "title": "JsonComments",
+        "description": "JsonComments extension settings",
         "properties": {
-          "json-comments": {
-            "type": "object",
-            "properties": {
-              "comments.savefile":{ 
-                "type": "string",
-                "title": "注释保存文件:",
-                "default": "comments.json",
-                "description": "保存JSON注释到此文件"
-              }
-            } 
-          }
-        }
-      }
+          "json-comments.storageFile": { 
+              "type": "string",
+              "title": "注释保存文件:",
+              "default": "comments.json",
+              "description": "保存注释到此JSON文件"
+            },
+            "json-comments.entryKey":{ 
+              "type": "string",
+              "title": "注释入口键",
+              "description": "注释保存的${}文件中入口位置"
+            },
+            "json-comments.enable":{ 
+              "type": "boolean",
+              "title": "显示注释",
+              "default": true,
+              "description": "是否使用CodeLens显示注释"
+            }
+          } 
+        }  
     ]
   },
   "scripts": {

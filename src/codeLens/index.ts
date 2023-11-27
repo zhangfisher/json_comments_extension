@@ -1,8 +1,13 @@
 /* eslint-disable @typescript-eslint/semi */
 import * as vscode from 'vscode';
-import { jsonKeyHover } from './jsonKeyCodeLens' 
+import jsonCommentsCodeLens from './jsonCommentsCodeLens' 
 
 
 export default (context: vscode.ExtensionContext) => { 
-	jsonKeyHover(context);
+	context.subscriptions.push(...[
+		vscode.languages.registerCodeLensProvider(
+			{ language: 'json' },
+			jsonCommentsCodeLens(context)
+		)
+	])
 };

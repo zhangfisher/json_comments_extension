@@ -7,7 +7,7 @@
 import astParser, { Location,ASTNode,ObjectNode,ArrayNode,PropertyNode,ValueNode } from "json-to-ast";
  
 
-const ABORT = Symbol("abort")
+export const ABORT = Symbol("abort")
 
 
 interface TraverseNodeContext {
@@ -108,11 +108,11 @@ export function traverseJson(json:string,callback:TraverseJsonCallback)  {
 
  
 
-import fs from "fs"
-import path from "path"
+// import fs from "fs"
+// import path from "path"
 
-const json = fs.readFileSync(path.join(__dirname,"../../package.json")).toString()
+// const json = fs.readFileSync(path.join(__dirname,"../../package.json")).toString()
 
-traverseJson(json,({path,jsonpath,value,line,column})=>{
-    console.log(line,column,jsonpath,typeof(value)!=="object" ? value : JSON.stringify(value))
-}) 
+// traverseJson(json,({path,jsonpath,value,line,column})=>{
+//     console.log(line,column,jsonpath,typeof(value)!=="object" ? value : JSON.stringify(value))
+// }) 

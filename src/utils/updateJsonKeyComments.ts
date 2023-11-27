@@ -28,7 +28,7 @@ import { getCurrentWorkspaceFolder } from './getCurrentWorkspaceFolder';
 export function updateJsonKeyComments(docRelUri:string,jsonPath:string,comments:string){ 
     const wsFolder = getCurrentWorkspaceFolder()
     if(!wsFolder) return;
-    const commentsFileName = getConfig<string>(JsonCommentsConfigs.CommentsSaveFile) || "comments.json"
+    const commentsFileName = getConfig<string>(JsonCommentsConfigs.SaveFile) || "comments.json"
     const  commentsFile =path.join(wsFolder,commentsFileName)
     updateJsonFile(commentsFile,(jsonComments)=>{
         if(!(docRelUri in jsonComments)){
