@@ -7,7 +7,7 @@
  */
 
 
-import {  ExtensionContext, Hover, languages, MarkdownString, Position, Range, TextDocument, window } from "vscode";
+import {  ExtensionContext, Hover, languages, MarkdownString  } from "vscode";
 
 
 

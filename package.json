@@ -1,7 +1,7 @@
 {
   "name": "json-comments",
   "displayName": "json-comments",
-  "description": "add commonts to json file",
+  "description": "add comments to json file",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.84.0"
@@ -26,63 +26,18 @@
     ],
     "configuration": [
       {
-        "id": "JsonComments",
         "title": "JsonComments",
-        "order": 2,
         "properties": {
-          "conf.settingsEditor.numericObjectSetting": {
+          "json-comments": {
             "type": "object",
-            "order": 2,
-            "description": "An example numeric object setting.",
             "properties": {
-              "intprop": {
-                "type": "integer",
-                "description": "Integer property"
-              },
-              "numprop": {
-                "type": "number",
-                "description": "Numeric property"
+              "comments.savefile":{ 
+                "type": "string",
+                "title": "注释保存文件:",
+                "default": "comments.json",
+                "description": "保存JSON注释到此文件"
               }
-            },
-            "additionalProperties": false
-          },
-          "conf.settingsEditor.boolObjectSetting": {
-            "type": "object",
-            "order": 1,
-            "description": "An example bool object setting.",
-            "properties": {
-              "prop1": {
-                "type": "boolean",
-                "description": "Property 1"
-              },
-              "prop2": {
-                "type": "boolean",
-                "description": "Property 2"
-              }
-            },
-            "additionalProperties": false,
-            "default": {
-              "prop1": true,
-              "prop2": false
-            }
-          },
-          "conf.settingsEditor.uniqueEnumArraySetting": {
-            "type": "array",
-            "description": "An example enum array setting.",
-            "items": {
-              "type": "string",
-              "enum": [
-                "red",
-                "yellow",
-                "blue"
-              ]
-            },
-            "uniqueItems": true
-          },
-          "conf.settingsEditor.multilineSetting": {
-            "type": "string",
-            "description": "An example multiline setting.",
-            "editPresentation": "multilineText"
+            } 
           }
         }
       }
