@@ -6,6 +6,12 @@
 
 ![](./preview.gif)
 
+## 安装
+
+打开`VSCode`扩展，搜索`JsonComments`，然后安装即可。
+
+[链接](https://marketplace.visualstudio.com/items?itemName=wxzhang.json-comments&ssr=false#review-details)
+
 ## 使用方法
 
 - **添加注释**
