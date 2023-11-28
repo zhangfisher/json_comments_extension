@@ -82,7 +82,7 @@
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js",
     "l10n:extract":"pnpx @vscode/l10n-dev export --outDir ./l10n ./src",
-    "release":"vsce publish",
+    "release":"vsce publish patch",
     "package:vsix":"vsce package"
   },
   "devDependencies": {

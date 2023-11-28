@@ -1,31 +1,45 @@
 # json-comments
 
-为任意`JSON`文件添加自定义注释，效果如下：
+[中文](./README_CN.md) | [English](./README.md) 
+
+Add custom comments to any JSON file with ease.
+
+![](./preview.gif)
+
+## Usage
+
+- Add comments
+
+Open any JSON file in your current workspace, hover over any key, and click on Add Comment in the hover tooltip. You can then input your comment, and it will be added. The comments will be displayed above the commented keys in the form of CodeLens.
+
+- Remove comments
+
+Simply click on the comment content and select Remove Comment to delete it.- Clear all commentsPress Ctrl+Shift+P, type Clear All Comments, and select it to remove all comments in the current document.
+
+## Questions
+
+- **Where are the comment contents saved?**
+
+By default, the comment contents are saved in the json-comments section of the package.json file in your current workspace. If you want to modify the save location, you can do so in the workspace configuration.
+
+- **How can I change the comment save location?**
+
+Modify the Save File and Entry Key in the workspace configuration for JsonComments.
+ For example:js
+ 
+ ```js
+ // Save comments in a file named comments.json in the current workspace
+ "json-comments": {    
+    "Save File": "comments.json",    
+    "Entry Key": ""
+ }
+
+ ```
+## Recommendations
+
+[VoerkaI18n](https://github.com/zhangfisher/voerka-i18n) - Internationalization solution for 'Javascript/Typescript/Vue/React/Solidjs/SvelteJs/ReactNative'
 
 
-## 使用方法
-
-- **添加注释**
-
-打开当前工作区任意`JSON`文件，在任意键上悬停，在悬停提示中点击`Add Comment`，即可输入并添加注释。
-添加的注释将以`CodeLens`的形式显示在所注释的键上方。
-
-- **删除注释**
-
-直接点击注释内容，选择`删除注释`即可。
-
-- **清空注释**
-
-按下`Ctrl+Shift+P`，输入`Clear All Comments`，即可清空当前文档的所有注释。
-
-
-## 问题
-
-
-- **注释内容保存在哪里？**
-
-默认情况下，注释内容保存在当前工作区的`package.json`文件中的`json-comments`中。
-如果你想要修改保存位置，可以工作区配置中进行修改。
 
 
 
