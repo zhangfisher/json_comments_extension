@@ -1,0 +1,15 @@
+{
+    "jsonComments.displayName": "JsonComments",
+    "jsonComments.installTips": "Jsonファイルのコメント機能を有効にするためにJsonCommentsプラグインをインストールしてください。詳細はこちら: https://github.com/zhangfisher/json_comments_extension",
+    "jsonComments.description": "JSONファイルにコメントを追加する",
+    "jsonComments.saveFile.title": "コメントを保存するファイル：",
+    "jsonComments.saveFile.description": "すべてのコメントをこのJSONファイルに保存する：",
+    "jsonComments.entryKey.title": "コメントのエントリキー",
+    "jsonComments.entryKey.description": "コメントを保存するJSONファイル内のキーの名前",
+    "jsonComments.enable.title": "コメントを表示する",
+    "jsonComments.enable.description": "コメントを表示するかどうか",
+    "jsonComments.command.addComments.title": "コメントを追加する",
+    "jsonComments.command.removeComments.title": "コメントを削除する",
+    "jsonComments.command.editComments.title": "コメントを編集する",
+    "jsonComments.command.clearComments.title": "現在のドキュメントのすべてのコメントを削除する"
+}

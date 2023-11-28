@@ -7,14 +7,12 @@
 
 
 import * as vscode from 'vscode';
-import { workspace } from 'vscode';
-import { JsonComments, JsonCommentsConfigs, JsonDocComments } from '../types';
+import {  JsonDocComments } from '../types';
 import { getCurrentWorkspaceFolder } from './getCurrentWorkspaceFolder';
-import { getConfig } from './getConfig';
-import path from 'path';
-import fs from 'fs';
-import { DEFAULT_ENTRY_KEY } from '../consts';
 import { getDocumentRelativePath } from './getDocumentRelativePath';
+import { getCommentsConfig } from './getCommentsConfig';
+import { getInitialComments } from './getInitialComments';
+import fs from 'fs';
 
 
 
@@ -31,33 +29,23 @@ export function getDocumentComments(docOrUri:string | vscode.TextDocument ):Json
     if(!wsFolder) return {};
 
     let docRelPath:string = typeof docOrUri === 'string' ? docOrUri : getDocumentRelativePath(docOrUri)!
-
-    const commentsFileName = getConfig<string>(JsonCommentsConfigs.SaveFile) || "comments.json"
-    const commentsFile =path.join(wsFolder,commentsFileName)
-    const commentsBaseFile = path.basename(commentsFileName).toLowerCase()
-
+    
+    // 1. 读取注释文件配置信息
+    const { entryKey , commentsFile } =  getCommentsConfig()
     if(!fs.existsSync(commentsFile)){
         return {}
     }
+    // 2. 读取注释文件
     let comments = JSON.parse(fs.readFileSync(commentsFile).toString())
     
-    /// 
-    let entryKey = getConfig<string>(JsonCommentsConfigs.EntryKey) 
-    
-    // 如果将注释保存在package.json中，则不能使用整个文件作为注释，而是使用package.json中的某个key来保存注释
-    if(entryKey){
+    // 3. 获取注释
+    if(entryKey.length>0){
         if(!(entryKey in comments)) comments[entryKey]={}
         comments = comments[entryKey]
-    }else{
-        if(commentsBaseFile === 'package.json' ){
-            entryKey = entryKey || DEFAULT_ENTRY_KEY 
-            if(entryKey.length===0) entryKey = DEFAULT_ENTRY_KEY
-            comments = comments[entryKey]
-        }
     }
-
+    // 4. 获取文档注释
     if(docRelPath in comments){
-        return  comments[docRelPath] as Record<string,any>
+        return comments[docRelPath] as Record<string,any>
     }else{
         return {} as Record<string,any>
     }    

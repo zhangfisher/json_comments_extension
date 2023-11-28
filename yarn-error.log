@@ -1,0 +1,140 @@
+Arguments: 
+  D:\Program Files\nodejs\node.exe D:\node_stores\npm\packages\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Program Files (x86)\Google\Chrome\Application;C:\Python311\Scripts\;C:\Python311\;C:\Python39\Scripts\;C:\Python39\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python310\Scripts\;C:\Python310\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\Program Files\Java\OpenJDK11\bin;D:\Program Files\Android\android-sdk\platform-tools;D:\Program Files\Android\android-sdk\emulator;D:\Program Files\Android\android-sdk\tools;D:\Program Files\Android\android-sdk\tools\bin;C:\Windows\System32\OpenSSH;C:\Users\Administrator\AppData\Local\Yarn\bin;D:\Program Files\lua\bin;D:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Program Files\apache-maven-3.6.2\bin;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;D:\Program Files\netcat;D:\Program Files\Gradle\gradle-8.4\bin;C:\ProgramData\chocolatey\bin;d:\Program Files\Git\cmd;D:\Program Files\Java\jdk18\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Program Files\TortoiseGit\bin;D:\node_stores\npm\packages;d:\node_stores\pnpm\bin;C:\Windows\System32\WindowsPowerShell\v1.0;D:\Program Files\nodejs\;d:\Program Files\xmake;D:\Program Files\Tailscale\;C:\Users\Administrator\AppData\Local\pnpm;C:\Users\Administrator\.cargo\bin;C:\Users\Administrator\AppData\Local\pnpm;C:\Users\Administrator\.windows-build-tools\python27\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;D:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Program Files\emqx\bin;d:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2\bin;C:\Users\Administrator\.dotnet\tools;d:\Program Files\JetBrains\WebStorm 2020.3.2\bin;C:\Users\Administrator\go\bin;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code Insiders\bin;D:\Softwares;d:\Program Files\JetBrains\IntelliJ IDEA 2020.3.2\bin;C:\Users\Administrator\AppData\Local\Programs\Fiddler;D:\Program Files\Java\jdk18\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\.cargo\bin;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;D:\node_stores\npm\packages;C:\Users\Administrator\AppData\Roaming\npm;
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.17.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EEXIST: file already exists, mkdir 'E:\Work\Code\sources\json-comments\node_modules\mocha\node_modules\glob\node_modules'
+
+npm manifest: 
+  {
+    "name": "json-comments",
+    "displayName": "%jsonComments.displayName%",
+    "description": "%jsonComments.description%",
+    "version": "0.0.1",
+    "homepage": "https://github.com/zhangfisher/json_comments_extension",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/zhangfisher/json_comments_extension"
+    },
+    "engines": {
+      "vscode": "^1.84.0"
+    },
+    "categories": [
+      "Other"
+    ],
+    "icon": "json.png",
+    "author": {
+        "name": "wxzhang",
+        "email": "wxzhang@126.com"
+    },
+    "keywords": [
+      "json",
+      "comments"
+    ],
+    "activationEvents": [
+      "onLanguage:json"
+    ],
+    "main": "./dist/extension.js",
+    "contributes": {
+      "commands": [
+        {
+          "command": "json-comments.addComments",
+          "title": "%jsonComments.command.addComment.title%"
+        },
+        {
+          "command": "json-comments.clearComments",
+          "title": "%jsonComments.command.clearComments.title%"
+        },
+        {
+          "command": "json-comments.editComments",
+          "title": "%jsonComments.command.editComments.title%"
+        }
+      ],
+      "configuration": [
+        {
+          "title": "JsonComments",
+          "description": "JsonComments extension settings",
+          "properties": {
+            "json-comments.saveFile": {
+              "type": "string",
+              "title": "%jsonComments.saveFile.title%",
+              "default": "package.json",
+              "description": "%jsonComments.saveFile.description%"
+            },
+            "json-comments.entryKey": {
+              "type": "string",
+              "title": "%jsonComments.entryKey.title%",
+              "default": "json-comments",
+              "description": "%jsonComments.entryKey.description%"
+            },
+            "json-comments.enable": {
+              "type": "boolean",
+              "title": "%jsonComments.enable.title%",
+              "default": true,
+              "description": "%jsonComments.enable.description%"
+            }
+          }
+        }
+      ]
+    },
+    "l10n": "./l10n",
+    "scripts": {
+      "vscode:prepublish": "pnpm run package",
+      "compile": "webpack",
+      "watch": "webpack --watch",
+      "package": "webpack --mode production --devtool hidden-source-map",
+      "compile-tests": "tsc -p . --outDir out",
+      "watch-tests": "tsc -p . -w --outDir out",
+      "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+      "lint": "eslint src --ext ts",
+      "test": "node ./out/test/runTest.js",
+      "l10n:extract":"pnpx @vscode/l10n-dev export --outDir ./l10n ./src",
+      "release":"vsce publish",
+      "package:vsix":"vsce package"
+    },
+    "devDependencies": {
+      "@types/mocha": "^10.0.3",
+      "@types/node": "18.x",
+      "@types/vscode": "^1.84.0",
+      "@typescript-eslint/eslint-plugin": "^6.9.0",
+      "@typescript-eslint/parser": "^6.9.0",
+      "@vscode/l10n-dev": "^0.0.30",
+      "@vscode/test-electron": "^2.3.6",
+      "eslint": "^8.52.0",
+      "glob": "^10.3.10",
+      "mocha": "^10.2.0",
+      "ts-loader": "^9.5.0",
+      "tsx": "^4.4.0",
+      "typescript": "^5.2.2",
+      "webpack": "^5.89.0",
+      "webpack-cli": "^5.1.4",
+      "vsce":"latest"
+    },
+    "dependencies": {
+      "@types/json-to-ast": "^2.1.4",
+      "@types/jsonpath": "^0.2.4",
+      "@vscode/l10n": "^0.0.17",
+      "flex-tools": "^1.3.50",
+      "fluent-json-schema": "^4.2.1",
+      "json-schema-from-path": "^2.0.1",
+      "json-to-ast": "^2.1.0",
+      "jsonpath": "^1.1.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

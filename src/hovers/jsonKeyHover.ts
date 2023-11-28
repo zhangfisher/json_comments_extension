@@ -7,7 +7,7 @@
  */
 
 
-import {  ExtensionContext, Hover, languages, MarkdownString  } from "vscode";
+import {  ExtensionContext, Hover, languages, MarkdownString,l10n  } from "vscode";
 
 
 
@@ -23,7 +23,7 @@ export function jsonKeyHover(context: ExtensionContext) {
 			const jsonKey = document.getText(jsonKeyRange);
 			
 			const cmds = [
-				`[$(keybindings-add)添加注释](command:json-comments.addComments?${encodeURIComponent(JSON.stringify({key:jsonKey,rang:jsonKeyRange}))})`
+				`[$(keybindings-add)${l10n.t('Add Comment')}](command:json-comments.addComments?${encodeURIComponent(JSON.stringify({key:jsonKey,rang:jsonKeyRange}))})`
 			]
 
 			// 根据 JSON 键返回相应的 Hover 内容

@@ -4,6 +4,7 @@ import { JsonCommentsConfigs } from '../types';
 import { getDocumentComments } from '../utils/getDocumentComments';
 import { traverseJson,ABORT } from '../utils/traverseJson';
 import { isNothing } from 'flex-tools/typecheck/isNothing';
+import { getDocumentRelativePath } from '../utils/getDocumentRelativePath';
 
 /**
  * CodelensProvider
@@ -32,13 +33,14 @@ export class jsonCommentsCodeLensProvider implements vscode.CodeLensProvider {
 					const commentsText = comments[jsonpath]
 					if(!commentsText) return					
 					const range = new vscode.Range(new vscode.Position(line-1, column-1), new vscode.Position(line-1, column-1));
+					const params = {
+						jsonpath,
+						document:getDocumentRelativePath(document)!
+					}
 					this.codeLenses.push(new vscode.CodeLens(range, {
-						title: "$(panel-close)",
-						command: 'json-comments.removeComments'			// 点击可以修改
-					}));
-					this.codeLenses.push(new vscode.CodeLens(range, {
-						title: commentsText,
-						command: 'json-comments.removeComments'			// 点击可以修改
+						title: `$(output-view-icon)${commentsText}`,
+						command: `json-comments.editComments`,			// 点击可以修改
+						arguments: [params]
 					}));
 					
 					delete comments[jsonpath]
@@ -51,15 +53,9 @@ export class jsonCommentsCodeLensProvider implements vscode.CodeLensProvider {
 	}
 
 	public resolveCodeLens(codeLens: vscode.CodeLens, token: vscode.CancellationToken) {
-		//if (vscode.workspace.getConfiguration("codelens-sample").get("enableCodeLens", true)) {
-			codeLens.command = {
-				title: "Codelens provided by sample extension",
-				tooltip: "Tooltip provided by sample extension",
-				command: "codelens-sample.codelensAction",
-				arguments: ["Argument 1", false]
-			};
+		if (getConfig<Boolean>(JsonCommentsConfigs.Enable)) {			
 			return codeLens;
-		//}
+		}
 		return null;
 	}
 }

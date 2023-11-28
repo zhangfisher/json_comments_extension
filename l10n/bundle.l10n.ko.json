@@ -1,0 +1,11 @@
+{
+  "Please install the JsonComments plugin to enable commenting functionality for JSON files, see: https://github.com/zhangfisher/json_comments_extension": "JSON 파일에 주석 기능을 활성화하려면 JsonComments 플러그인을 설치하세요. 자세한 내용은 https://github.com/zhangfisher/json_comments_extension을 참조하세요",
+  "Add Comment": "댓글 추가",
+  "Edit This Comment": "이 댓글 편집",
+  "Delete This Comment": "이 댓글 삭제",
+  "Select Operate": "작업 선택",
+  "Select How to Handle This Comment": "이 댓글을 처리하는 방법 선택",
+  "Enter Comment Content for <{0}>:": "<{0}>에 대한 댓글 내용을 입력하세요:",
+  "Enter Comment": "댓글 입력",
+  "Are you sure want to clear all comments for {0}?":"{0}에 대한 모든 댓글을 지우시겠습니까?"
+}

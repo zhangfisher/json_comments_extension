@@ -1,0 +1,15 @@
+{
+  "jsonComments.displayName": "JsonComments",
+  "jsonComments.installTips": "Please install the JsonComments plugin to enable commenting functionality for JSON files, see: https://github.com/zhangfisher/json_comments_extension",
+  "jsonComments.description": "Add comments to JSON files",
+  "jsonComments.saveFile.title": "Save comments to file:",
+  "jsonComments.saveFile.description": "Save all comments to this JSON file:",
+  "jsonComments.entryKey.title": "Comment entry key",
+  "jsonComments.entryKey.description": "Name of the key in the JSON file where comments are saved",
+  "jsonComments.enable.title": "Show comments",
+  "jsonComments.enable.description": "Whether to show comments",
+  "jsonComments.command.addComments.title": "Add comments",
+  "jsonComments.command.removeComments.title": "Remove comments",
+  "jsonComments.command.editComments.title": "Edit comments",
+  "jsonComments.command.clearComments.title": "Clear comments" 
+  }

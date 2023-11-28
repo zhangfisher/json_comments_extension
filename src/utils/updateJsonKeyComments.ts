@@ -6,14 +6,13 @@
 
 
 
-import * as vscode from 'vscode';
-import { workspace } from 'vscode';
-import { getDocumentComments } from './getDocumentComments';
-import { JsonCommentsConfigs, JsonKeyComments } from '../types';
+import { l10n } from 'vscode';
+import { JsonCommentsConfigs } from '../types';
 import { updateJsonFile } from './updateJsonFile';
 import { getConfig } from './getConfig';
 import path from 'path';
 import { getCurrentWorkspaceFolder } from './getCurrentWorkspaceFolder';
+import { getCommentsConfig } from './getCommentsConfig';
 
 
 
@@ -28,13 +27,18 @@ import { getCurrentWorkspaceFolder } from './getCurrentWorkspaceFolder';
 export function updateJsonKeyComments(docRelUri:string,jsonPath:string,comments:string){ 
     const wsFolder = getCurrentWorkspaceFolder()
     if(!wsFolder) return;
-    const commentsFileName = getConfig<string>(JsonCommentsConfigs.SaveFile) || "comments.json"
-    const  commentsFile =path.join(wsFolder,commentsFileName)
+    const { entryKey , commentsFile } =  getCommentsConfig()
     updateJsonFile(commentsFile,(jsonComments)=>{
-        if(!(docRelUri in jsonComments)){
-            jsonComments[docRelUri] = {}
+        let docCommects = entryKey.length===0 ? jsonComments : jsonComments[entryKey]
+        if(typeof(docCommects)!=='object') docCommects ={}         
+        if(Object.keys(docCommects).length===0){
+            docCommects.tips = l10n.t("Please install the JsonComments plugin to enable commenting functionality for JSON files, see: https://github.com/zhangfisher/json_comments_extension")
         }
-        jsonComments[docRelUri][jsonPath] = comments
+        if(!(docRelUri in docCommects)){
+            docCommects[docRelUri] = {}
+        }
+        docCommects[docRelUri][jsonPath] = comments
+        Object.assign(jsonComments,entryKey.length===0 ? docCommects : {[entryKey]:docCommects})
     })
 }
 

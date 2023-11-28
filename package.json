@@ -1,13 +1,28 @@
 {
   "name": "json-comments",
-  "displayName": "json-comments",
-  "description": "add comments to json file",
+  "displayName": "%jsonComments.displayName%",
+  "description": "%jsonComments.description%",
   "version": "0.0.1",
+  "publisher": "wxzhang",
+  "homepage": "https://github.com/zhangfisher/json_comments_extension",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhangfisher/json_comments_extension"
+  },
   "engines": {
     "vscode": "^1.84.0"
   },
   "categories": [
     "Other"
+  ],
+  "icon": "json.png",
+  "author": {
+      "name": "wxzhang",
+      "email": "wxzhang@126.com"
+  },
+  "keywords": [
+    "json",
+    "comments"
   ],
   "activationEvents": [
     "onLanguage:json"
@@ -17,11 +32,15 @@
     "commands": [
       {
         "command": "json-comments.addComments",
-        "title": "Add Comments"
+        "title": "%jsonComments.command.addComment.title%"
       },
       {
-        "command": "json-comments.removeComments",
-        "title": "Remove Comments"
+        "command": "json-comments.clearComments",
+        "title": "%jsonComments.command.clearComments.title%"
+      },
+      {
+        "command": "json-comments.editComments",
+        "title": "%jsonComments.command.editComments.title%"
       }
     ],
     "configuration": [
@@ -29,27 +48,29 @@
         "title": "JsonComments",
         "description": "JsonComments extension settings",
         "properties": {
-          "json-comments.storageFile": { 
-              "type": "string",
-              "title": "注释保存文件:",
-              "default": "comments.json",
-              "description": "保存注释到此JSON文件"
-            },
-            "json-comments.entryKey":{ 
-              "type": "string",
-              "title": "注释入口键",
-              "description": "注释保存的${}文件中入口位置"
-            },
-            "json-comments.enable":{ 
-              "type": "boolean",
-              "title": "显示注释",
-              "default": true,
-              "description": "是否使用CodeLens显示注释"
-            }
-          } 
-        }  
+          "json-comments.saveFile": {
+            "type": "string",
+            "title": "%jsonComments.saveFile.title%",
+            "default": "package.json",
+            "description": "%jsonComments.saveFile.description%"
+          },
+          "json-comments.entryKey": {
+            "type": "string",
+            "title": "%jsonComments.entryKey.title%",
+            "default": "json-comments",
+            "description": "%jsonComments.entryKey.description%"
+          },
+          "json-comments.enable": {
+            "type": "boolean",
+            "title": "%jsonComments.enable.title%",
+            "default": true,
+            "description": "%jsonComments.enable.description%"
+          }
+        }
+      }
     ]
   },
+  "l10n": "./l10n",
   "scripts": {
     "vscode:prepublish": "pnpm run package",
     "compile": "webpack",
@@ -59,7 +80,10 @@
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "l10n:extract":"pnpx @vscode/l10n-dev export --outDir ./l10n ./src",
+    "release":"vsce publish",
+    "package:vsix":"vsce package"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.3",
@@ -67,6 +91,7 @@
     "@types/vscode": "^1.84.0",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
+    "@vscode/l10n-dev": "^0.0.30",
     "@vscode/test-electron": "^2.3.6",
     "eslint": "^8.52.0",
     "glob": "^10.3.10",
@@ -75,11 +100,13 @@
     "tsx": "^4.4.0",
     "typescript": "^5.2.2",
     "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "vsce":"latest"
   },
   "dependencies": {
     "@types/json-to-ast": "^2.1.4",
     "@types/jsonpath": "^0.2.4",
+    "@vscode/l10n": "^0.0.17",
     "flex-tools": "^1.3.50",
     "fluent-json-schema": "^4.2.1",
     "json-schema-from-path": "^2.0.1",

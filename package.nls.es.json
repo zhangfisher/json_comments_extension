@@ -1,0 +1,15 @@
+{
+    "jsonComments.displayName": "JsonComments",
+    "jsonComments.installTips": "Por favor, instale el complemento JsonComments para habilitar la funcionalidad de comentarios en archivos JSON, consulta: https://github.com/zhangfisher/json_comments_extension",
+    "jsonComments.description": "Agregar comentarios a archivos JSON",
+    "jsonComments.saveFile.title": "Guardar comentarios en archivo:",
+    "jsonComments.saveFile.description": "Guardar todos los comentarios en este archivo JSON:",
+    "jsonComments.entryKey.title": "Clave de entrada de comentarios",
+    "jsonComments.entryKey.description": "Nombre de la clave en el archivo JSON donde se guardan los comentarios",
+    "jsonComments.enable.title": "Mostrar comentarios",
+    "jsonComments.enable.description": "Si se deben mostrar los comentarios",
+    "jsonComments.command.addComments.title": "Agregar comentarios",
+    "jsonComments.command.removeComments.title": "Eliminar comentarios",
+    "jsonComments.command.editComments.title": "Editar comentarios",
+    "jsonComments.command.clearComments.title": "Borrar todos los comentarios del documento actual"
+}

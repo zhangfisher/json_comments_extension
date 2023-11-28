@@ -1,5 +1,5 @@
 
-import { ExtensionContext,Position,Range,window,Selection } from 'vscode';
+import { ExtensionContext,Position,Range,window,Selection ,l10n} from 'vscode';
 import * as vscode from 'vscode'; 
 import { getCurrentDocument } from '../utils/getCurrentDocument';
 import { getPathFromJson } from '../utils/getPathFromJson';
@@ -25,7 +25,6 @@ export interface AddCommentsParams{
  */
 export function addComments(context: ExtensionContext) {
     return async function({key,rang}:AddCommentsParams){ 
-		const editor = window.activeTextEditor;
 		const currentDocument = getCurrentDocument()
 		if(!currentDocument){
 			return
@@ -36,18 +35,18 @@ export function addComments(context: ExtensionContext) {
 			column:rang[0].character+1
 		})
 		if(!jsonpath) return 
-		
+
 		const docRelPath = getDocumentRelativePath(currentDocument)!
 
 		// 2. 获取当前
 		const comments =await  vscode.window.showInputBox({ 
-			prompt: `为<${jsonpath}>输入注释内容：`,
-			placeHolder: '输入注释内容',
+			prompt: l10n.t("Enter Comment Content for <{0}>:",jsonpath),
+			placeHolder: l10n.t('Enter Comment'),
 			value: getJsonKeyComments(docRelPath,jsonpath)
 		});
 		if(!comments) return
 
- 
+		// 3. 更新注释到文件
 		await updateJsonKeyComments(docRelPath,jsonpath,comments)
   
 	}

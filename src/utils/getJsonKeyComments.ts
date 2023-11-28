@@ -15,9 +15,5 @@ import { getDocumentComments } from './getDocumentComments';
  */
 export function getJsonKeyComments(docRelUri:string,jsonPath:string):string | undefined{ 
     const comments = getDocumentComments(docRelUri)
-    if(!(docRelUri in comments)){
-        return
-    }
-    // @ts-ignore
-    return comments[docRelUri][jsonPath]
+    return comments[jsonPath]
 }

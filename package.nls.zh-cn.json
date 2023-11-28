@@ -1,0 +1,15 @@
+{
+    "jsonComments.displayName": "JsonComments",
+    "jsonComments.installTips": "请安装JsonComments插件为JSON文件启用注释功能, 详见:https://github.com/zhangfisher/json_comments_extension",
+    "jsonComments.description": "在JSON文件中添加注释",
+    "jsonComments.saveFile.title": "注释保存文件:",
+    "jsonComments.saveFile.description": "保存所有注释到此JSON文件:",
+    "jsonComments.entryKey.title": "注释保存位置键",
+    "jsonComments.entryKey.description": "注释保存JSON文件中的位置键名称",
+    "jsonComments.enable.title": "显示注释",
+    "jsonComments.enable.description": "是否显示注释",
+    "jsonComments.command.addComments.title": "添加注释",
+    "jsonComments.command.removeComments.title": "删除注释",
+    "jsonComments.command.editComments.title": "编辑注释",
+    "jsonComments.command.clearComments.title": "清空当前文档所有注释"
+}

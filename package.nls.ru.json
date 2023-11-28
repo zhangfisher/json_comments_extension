@@ -1,0 +1,15 @@
+{
+    "jsonComments.displayName": "JsonComments",
+    "jsonComments.installTips": "Пожалуйста, установите плагин JsonComments, чтобы включить функцию комментирования для файлов JSON. Подробнее: https://github.com/zhangfisher/json_comments_extension",
+    "jsonComments.description": "Добавление комментариев в файлы JSON",
+    "jsonComments.saveFile.title": "Сохранить комментарии в файле:",
+    "jsonComments.saveFile.description": "Сохранить все комментарии в этом файле JSON:",
+    "jsonComments.entryKey.title": "Ключ для сохранения комментариев",
+    "jsonComments.entryKey.description": "Имя ключа в файле JSON, где сохраняются комментарии",
+    "jsonComments.enable.title": "Показывать комментарии",
+    "jsonComments.enable.description": "Определяет, должны ли отображаться комментарии",
+    "jsonComments.command.addComments.title": "Добавить комментарии",
+    "jsonComments.command.removeComments.title": "Удалить комментарии",
+    "jsonComments.command.editComments.title": "Редактировать комментарии",
+    "jsonComments.command.clearComments.title": "Очистить все комментарии в текущем документе"
+}

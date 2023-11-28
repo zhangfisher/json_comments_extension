@@ -1,0 +1,11 @@
+{
+  "Please install the JsonComments plugin to enable commenting functionality for JSON files, see: https://github.com/zhangfisher/json_comments_extension": "JSON ファイルのコメント機能を有効にするには、JsonComments プラグインをインストールしてください。詳細については、https://github.com/zhangfisher/json_comments_extension を参照してください",
+  "Add Comment": "コメントを追加",
+  "Edit This Comment": "このコメントを編集",
+  "Delete This Comment": "このコメントを削除",
+  "Select Operate": "操作を選択",
+  "Select How to Handle This Comment": "このコメントの処理方法を選択",
+  "Enter Comment Content for <{0}>:": "<{0}> のコメントの内容を入力してください:",
+  "Enter Comment": "コメントを入力",
+  "Are you sure want to clear all comments for {0}?":"{0} のすべてのコメントを削除してもよろしいですか？"
+}

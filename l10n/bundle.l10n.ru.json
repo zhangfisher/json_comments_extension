@@ -1,0 +1,11 @@
+{
+  "Please install the JsonComments plugin to enable commenting functionality for JSON files, see: https://github.com/zhangfisher/json_comments_extension": "Установите плагин JsonComments, чтобы активировать возможность комментирования для файлов JSON. См.: https://github.com/zhangfisher/json_comments_extension",
+  "Add Comment": "Добавить комментарий",
+  "Edit This Comment": "Редактировать этот комментарий",
+  "Delete This Comment": "Удалить этот комментарий",
+  "Select Operate": "Выбрать действие",
+  "Select How to Handle This Comment": "Выберите, как обработать этот комментарий",
+  "Enter Comment Content for <{0}>:": "Введите содержимое комментария для <{0}>:",
+  "Enter Comment": "Введите комментарий",
+  "Are you sure want to clear all comments for {0}?":"Вы уверены, что хотите удалить все комментарии для {0}?"
+}

@@ -1,0 +1,11 @@
+{
+  "Please install the JsonComments plugin to enable commenting functionality for JSON files, see: https://github.com/zhangfisher/json_comments_extension": "Please install the JsonComments plugin to enable commenting functionality for JSON files, see: https://github.com/zhangfisher/json_comments_extension",
+  "Add Comment": "Add Comment",
+  "Edit This Comment": "Edit This Comment",
+  "Delete This Comment": "Delete This Comment",
+  "Select Operate": "Select Operate",
+  "Select How to Handle This Comment": "Select How to Handle This Comment",
+  "Enter Comment Content for <{0}>:": "Enter Comment Content for <{0}>:",
+  "Enter Comment": "Enter Comment",
+  "Are you sure want to clear all comments for {0}?": "Are you sure want to clear all comments for {0}?"
+}

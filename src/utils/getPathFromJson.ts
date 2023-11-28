@@ -68,7 +68,14 @@ function traversePropertyNode(this: ParseJsonPathContext, node: PropertyNode,con
 	if(inPosition.call(this,node.key.loc!)){
 		//console.log(`Path = ${context.path.join(".")}.${key}`);
 		context.path.push(key)
-		this.result = context.path.join(".")
+		const jsonpath = context.path.reduce((r,cur)=>{
+            if(/^\[\d+\]$/.test(cur)){
+                return r.length===0 ? cur : r+cur
+            }else{
+                return r.length===0 ? cur : r + "."+cur
+            }
+        },"")
+		this.result = jsonpath
 		return ABORT
 	}
 	//console.log(`Path = ${context.path.join(".")}.${key}`);
@@ -102,14 +109,4 @@ export function getPathFromJson(json:string,pos: Position)  {
 }
 
  
-
-
-// import fs from "fs"
-// import path from "path"
-
-// const json = fs.readFileSync(path.join(__dirname,"../../package.json")).toString()
-
-// getPathFromJson(json,{line:2,column:22})
-// getPathFromJson(json,{line:23,column:5})
-// getPathFromJson(json,{line:30,column:5})
-// getPathFromJson(json,{line:33,column:5})
+ 

@@ -1,0 +1,12 @@
+{
+  "Please install the JsonComments plugin to enable commenting functionality for JSON files, see: https://github.com/zhangfisher/json_comments_extension": "请安装JSON Comments插件为JSON文件提供注释功能, 详见: https://github.com/zhangfisher/json_comments_extension",
+  "Add Comment": "添加注释",
+  "Edit This Comment": "编辑此注释",
+  "Delete This Comment": "删除此注释",
+  "Select Action": "选择操作",
+  "Select How to Handle This Comment": "选择如何操作此注释",
+  "Enter Comment Content for <{0}>:": "为<{0}>输入注释内容：",
+  "Enter Comment": "输入注释内容",
+  "Are you sure want to clear all comments for {0}?":"确认要清除{0}的所有注释吗？"
+}
+ 
