@@ -6,6 +6,12 @@ Add custom comments to any JSON file with ease.
 
 ![](./preview.gif)
 
+## Install
+
+Open `VSCode` extension panel,search for `JsonComments`,then install it.
+
+[Link](https://marketplace.visualstudio.com/items?itemName=wxzhang.json-comments&ssr=false#review-details)
+
 ## Usage
 
 - Add comments
