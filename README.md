@@ -16,13 +16,17 @@ Open `VSCode` extension panel,search for `JsonComments`,then install it.
 
 ## Usage
 
-- Add comments
+- **Add comments**
 
 Open any JSON file in your current workspace, hover over any key, and click on Add Comment in the hover tooltip. You can then input your comment, and it will be added. The comments will be displayed above the commented keys in the form of CodeLens.
 
-- Remove comments
+- **Remove comments**
 
-Simply click on the comment content and select Remove Comment to delete it.- Clear all commentsPress Ctrl+Shift+P, type Clear All Comments, and select it to remove all comments in the current document.
+Simply click on the comment content and select Remove Comment to delete it.
+
+- **Clear all comments**
+
+Press `Ctrl+Shift+P`, type `Clear All Comments`, and select it to remove all comments in the current document.
 
 ## Questions
 
@@ -62,7 +66,8 @@ The comments will not be lost as long as the JSON path of the commented key rema
 
 - **Will moving the JSON file cause the comments to be lost?**
 
-In the current version, moving the file will cause the comments to become invalid. However, the comment contents are still saved in the package.json file (by default), and you can restore them by manually modifying the corresponding JSON path. The next version will automatically handle this when detecting file movements.
+No, JsonComments will automatically update the comment information when moving or renaming the JSON file to ensure that the comment information is not lost.
+However, if you move or rename the file outside the VSCode environment, the associated comment information will be lost. In this case, you can manually modify the path in the json-comments section of the package.json file.
 
 
 ## Recommendations

@@ -4,10 +4,10 @@ export interface JsonKeyComments{
     comments:string                              // 注释内容    
 }
 
-export type JsonDocPath = string
+export type JsonDocUri = string
 export type JsonDocJSONPath = string
 export type JsonDocComments = Record<JsonDocJSONPath,string>
-export type JsonComments = Record<JsonDocPath,JsonDocComments>
+export type JsonComments = Record<JsonDocUri,JsonDocComments>
  
 
 export enum JsonCommentsConfigs{

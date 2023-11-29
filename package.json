@@ -10,7 +10,7 @@
     "url": "https://github.com/zhangfisher/json_comments_extension"
   },
   "engines": {
-    "vscode": "^1.84.0"
+    "vscode": "^1.80.0"
   },
   "categories": [
     "Other"
@@ -25,7 +25,8 @@
     "comments"
   ],
   "activationEvents": [
-    "onLanguage:json"
+    "onLanguage:json",
+    "onFileSystemRenameFile"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -88,7 +89,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.3",
     "@types/node": "18.x",
-    "@types/vscode": "^1.84.0",
+    "@types/vscode": "^1.80.0",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
     "@vscode/l10n-dev": "^0.0.30",
@@ -99,9 +100,9 @@
     "ts-loader": "^9.5.0",
     "tsx": "^4.4.0",
     "typescript": "^5.2.2",
+    "vsce": "latest",
     "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4",
-    "vsce": "latest"
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "@types/json-to-ast": "^2.1.4",
