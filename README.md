@@ -35,6 +35,28 @@ Modify the Save File and Entry Key in the workspace configuration for JsonCommen
  }
 
  ```
+
+
+- **Will the comments modify the original JSON file?**
+
+No, all comments are by default saved in the <json-comments> section of the package.json file. The original JSON file remains unchanged.
+
+- **Will the comments be lost after committing to Git?**
+
+No, as long as you include the file where the comments are saved in the commit, the comments will not be lost.
+
+Can other team members see the comments?
+Yes, other team members can see the comments by installing the JsonComments plugin.
+
+- **Will the comments be lost when the JSON file is edited?**
+
+The comments will not be lost as long as the JSON path of the commented key remains unchanged. JsonComments saves the comments based on the JSON path as the key.
+
+- **Will moving the JSON file cause the comments to be lost?**
+
+In the current version, moving the file will cause the comments to become invalid. However, the comment contents are still saved in the package.json file (by default), and you can restore them by manually modifying the corresponding JSON path. The next version will automatically handle this when detecting file movements.
+
+
 ## Recommendations
 
 [VoerkaI18n](https://github.com/zhangfisher/voerka-i18n) - Internationalization solution for 'Javascript/Typescript/Vue/React/Solidjs/SvelteJs/ReactNative'
