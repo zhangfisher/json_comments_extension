@@ -2,7 +2,7 @@
   "name": "json-comments",
   "displayName": "%jsonComments.displayName%",
   "description": "%jsonComments.description%",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "wxzhang",
   "homepage": "https://github.com/zhangfisher/json_comments_extension",
   "repository": {
