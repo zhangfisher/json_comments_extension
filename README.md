@@ -6,6 +6,8 @@ Add custom comments to any JSON file with ease.
 
 ![](./preview.gif)
 
+![](./preview2.gif)
+
 ## Install
 
 Open `VSCode` extension panel,search for `JsonComments`,then install it.

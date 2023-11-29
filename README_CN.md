@@ -6,6 +6,8 @@
 
 ![](./preview.gif)
 
+![](./preview2.gif)
+
 ## 安装
 
 打开`VSCode`扩展，搜索`JsonComments`，然后安装即可。
