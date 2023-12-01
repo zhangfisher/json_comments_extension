@@ -7,7 +7,7 @@
     "jsonComments.entryKey.title": "주석 저장 위치 키",
     "jsonComments.entryKey.description": "주석을 저장할 JSON 파일 내 키 이름",
     "jsonComments.enable.title": "주석 표시",
-    "jsonComments.enable.description": "주석을 표시할지 여부",
+    "jsonComments.enable.description": "주석을 표시할지 여부", 
     "jsonComments.command.addComments.title": "주석 추가",
     "jsonComments.command.removeComments.title": "주석 삭제",
     "jsonComments.command.editComments.title": "주석 편집",

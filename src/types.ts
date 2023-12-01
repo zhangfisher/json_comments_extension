@@ -16,5 +16,7 @@ export enum JsonCommentsConfigs{
     // 保存注释的JSON文件中的入口key
     EntryKey="entryKey",
     /// 是否启用注释功能
-    Enable="enable"
+    Enable="enable",
+    // 当保存JSON时采用缩进
+    IndentSpaces = "indentSpaces"
 }

@@ -7,7 +7,7 @@
     "jsonComments.entryKey.title": "Kommentar-Eintragschlüssel",
     "jsonComments.entryKey.description": "Name des Schlüssels in der JSON-Datei, unter dem die Kommentare gespeichert werden",
     "jsonComments.enable.title": "Kommentare anzeigen",
-    "jsonComments.enable.description": "Ob Kommentare angezeigt werden sollen",
+    "jsonComments.enable.description": "Ob Kommentare angezeigt werden sollen",    
     "jsonComments.command.addComments.title": "Kommentare hinzufügen",
     "jsonComments.command.removeComments.title": "Kommentare entfernen",
     "jsonComments.command.editComments.title": "Kommentare bearbeiten",

@@ -7,7 +7,7 @@
     "jsonComments.entryKey.title": "注释保存位置键",
     "jsonComments.entryKey.description": "注释保存JSON文件中的位置键名称",
     "jsonComments.enable.title": "显示注释",
-    "jsonComments.enable.description": "是否显示注释",
+    "jsonComments.enable.description": "是否显示注释", 
     "jsonComments.command.addComments.title": "添加注释",
     "jsonComments.command.removeComments.title": "删除注释",
     "jsonComments.command.editComments.title": "编辑注释",

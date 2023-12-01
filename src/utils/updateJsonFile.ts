@@ -19,9 +19,11 @@
  * @param value 
  */
 
-import fs from 'fs'
+import fs from 'fs' 
+import { getCurrentTabSize } from './getCurrentTabSize'
 
 export function updateJsonFile(filename:string,updater:(json:Record<string,any>)=>void){
+    const indentSpaces = getCurrentTabSize()
     fs.readFile(filename,(err,data)=>{
         let jsonConents = {}
         if(err){
@@ -34,7 +36,7 @@ export function updateJsonFile(filename:string,updater:(json:Record<string,any>)
             jsonConents = JSON.parse(data.toString())
         }        
         updater(jsonConents)
-        fs.writeFile(filename,JSON.stringify(jsonConents,null,4),{
+        fs.writeFile(filename,JSON.stringify(jsonConents,null,indentSpaces),{
             encoding:'utf-8'
         },(err)=>{
             console.error(err)

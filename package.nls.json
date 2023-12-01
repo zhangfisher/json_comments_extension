@@ -12,4 +12,5 @@
   "jsonComments.command.removeComments.title": "Remove comments",
   "jsonComments.command.editComments.title": "Edit comments",
   "jsonComments.command.clearComments.title": "Clear comments" 
+  
   }
