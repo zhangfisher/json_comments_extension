@@ -69,7 +69,7 @@ Open `VSCode` extension panel, search for `JsonComments`, then install it.
 
 - **Why is `tsconfig.json` not supported??**
 
- `tsconfig. json is marked as JSONC format. Although the `JSONC` format also has a `JSON` extension, but it is not a standard `JSON` format and cannot be parsed use `JSON.parse`. so, it already supports comments and does not require 'jsonComment'.
+  `tsconfig. json is marked as JSONC format. Although the `JSONC` format also has a `JSON` extension, but it is not a standard `JSON` format and cannot be parsed use `JSON.parse`. so, it already supports comments and does not require 'jsonComment'.
   
 
 
