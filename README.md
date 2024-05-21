@@ -67,6 +67,11 @@ Open `VSCode` extension panel, search for `JsonComments`, then install it.
   No, JsonComments will automatically update the comment information when moving or renaming the JSON file to ensure that the comment information is not lost.
   However, if you move or rename the file outside the VSCode environment, the associated comment information will be lost. In this case, you can manually modify the path in the `json-comments` section of the `package.json` file.
 
+- **Why is `tsconfig.json` not supported??**
+
+ `tsconfig. json is marked as JSONC format. Although the `JSONC` format also has a `JSON` extension, but it is not a standard `JSON` format and cannot be parsed use `JSON.parse`. so, it already supports comments and does not require 'jsonComment'.
+  
+
 
 ## Recommendations
 
