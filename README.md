@@ -42,8 +42,8 @@ Modify the Save File and Entry Key in the workspace configuration for JsonCommen
  ```js
  // Save comments in a file named comments.json in the current workspace
  "json-comments": {    
-    "Save File": "comments.json",    
-    "Entry Key": ""
+    "commentsFile": "comments.json",    
+    "entryKey": ""
  }
 
  ```

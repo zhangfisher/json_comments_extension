@@ -46,8 +46,8 @@
 ```js
 // 保存在当前工作区的comments.json文件中
 "json-comments": {
-    "Save File": "comments.json",
-    "Entry Key": ""                
+    "commentsFile": "comments.json",
+    "entryKey": ""                
 }
 ```
 - **注释会修改原始的JSON文件吗？**
