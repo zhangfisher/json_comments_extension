@@ -40,7 +40,7 @@
 
 - **如何更改注释保存位置?**
 
-修改工作区配置`JsonComments`中的`Save File`和`Entry Key`即可。
+修改工作区配置`JsonComments`中的`commentsFile`和`entryKey`即可。
 例如：
 
 ```js
@@ -50,6 +50,8 @@
     "entryKey": ""                
 }
 ```
+
+
 - **注释会修改原始的JSON文件吗？**
 
 不会，所有的注释默认均保存在package.json文件中的<json-comments>中。
